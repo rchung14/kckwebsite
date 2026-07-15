@@ -13,8 +13,7 @@ export default function Home() {
   const str = t(locale);
   const h = str.home;
   const services = getServices(locale);
-  const allTestimonials = getTestimonials(locale);
-  const testimonials = allTestimonials.filter((tm) => !tm.placeholder);
+  const testimonials = getTestimonials(locale);
   const [leadAttorney] = getAttorneys(locale);
   const p = (path) => localePath(locale, path);
 

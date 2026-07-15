@@ -9,47 +9,41 @@
 export const testimonialsByLocale = {
   en: [
     {
-      placeholder: true,
       quote:
-        'They handled our home purchase with complete professionalism and caught a title issue our agent missed entirely. Worth every penny and then some.',
-      name: 'David & Christine',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+      name: 'Jane Doe',
       meta: 'First-time homebuyers · Fort Lee, NJ',
     },
     {
-      placeholder: true,
       quote:
-        'We have closed three investment properties with the firm. The level of detail and communication is unmatched, I recommend them to every investor I know.',
-      name: 'Elena',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      name: 'John Doe',
       meta: 'Commercial investor · Palisades Park, NJ',
     },
     {
-      placeholder: true,
       quote:
-        'Our closing ran into a last-minute lien dispute and it was resolved in two days. Calm, thorough, and decisive, exactly what you want in an attorney.',
-      name: 'James',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      name: 'Jane Doe',
       meta: 'Property owner · Arlington, VA',
     },
   ],
   ko: [
     {
-      placeholder: true,
       quote:
-        '주택 구입 전 과정을 정말 전문적으로 처리해 주셨고, 에이전트가 완전히 놓친 타이틀 문제까지 찾아내 주셨습니다. 수임료가 전혀 아깝지 않았습니다.',
-      name: 'David & Christine',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+      name: 'Jane Doe',
       meta: '생애 첫 주택 구입 · 포트리, NJ',
     },
     {
-      placeholder: true,
       quote:
-        '이 사무소를 통해 투자용 부동산 세 건을 클로징했습니다. 꼼꼼함과 소통은 비교할 곳이 없습니다, 아는 투자자들에게 모두 추천하고 있습니다.',
-      name: 'Elena',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      name: 'John Doe',
       meta: '상업용 부동산 투자자 · 팰리세이즈파크, NJ',
     },
     {
-      placeholder: true,
       quote:
-        '클로징 직전에 유치권 분쟁이 터졌는데 이틀 만에 해결해 주셨습니다. 침착하고 철저하며 결단력 있는, 변호사에게 바라는 그대로였습니다.',
-      name: 'James',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      name: 'Jane Doe',
       meta: '부동산 소유주 · 알링턴, VA',
     },
   ],
