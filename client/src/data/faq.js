@@ -63,7 +63,7 @@ const en = {
     },
     {
       q: 'What actually happens at settlement?',
-      a: 'Settlement is where every thread of the transaction converges: documents are signed, funds are collected and disbursed through escrow, the deed and deed of trust are executed, and the file goes to recording. We prepare and reconcile the settlement statement in advance, walk you through each document as you sign, and confirm recording and lien releases afterward.',
+      a: 'Settlement is where the transaction is completed: documents are signed, funds are collected and disbursed through escrow, the deed and deed of trust are executed, and the file goes to recording. We prepare and reconcile the settlement statement in advance, walk you through each document as you sign, and confirm recording and lien releases afterward.',
     },
     {
       q: 'Can you accommodate a rush or same-day closing?',

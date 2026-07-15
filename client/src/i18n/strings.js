@@ -217,7 +217,7 @@ export const strings = {
     },
     footer: {
       blurb:
-        'Trusted real estate legal counsel for individuals, investors, and businesses in New Jersey and the greater Washington DC area.',
+        'Real estate legal counsel for individuals, investors, and businesses in New Jersey and the greater Washington DC area.',
       services: 'Services',
       firm: 'Firm',
       contact: 'Contact',

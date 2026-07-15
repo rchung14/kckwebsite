@@ -73,11 +73,11 @@ const en = [
     title: 'Commercial Real Estate',
     h1: 'New Jersey Commercial Real Estate Lawyer',
     short:
-      'Acquisitions, dispositions, leasing, and development projects for commercial clients, from small investors to institutional funds navigating complex multi-party deals.',
+      'Acquisitions, dispositions, leasing, and development projects for commercial clients, from small investors to institutional funds.',
     bullets: ['Acquisition & disposition', 'Commercial leasing', 'Development & zoning'],
     intro: [
       'Commercial real estate rewards preparation and punishes assumptions. Whether you are acquiring your first investment property, negotiating a lease for your business, or repositioning a mixed-use building, the documents are longer, the diligence is deeper, and the consequences of a missed issue are measured in years, not weeks.',
-      'Kim, Choi & Kim, PC serves as commercial real estate lawyer to investors, owner-operators, small businesses, and developers in New Jersey and the greater Washington DC area. We combine boutique-firm responsiveness with transaction experience across purchases, sales, leasing, and development, and we scale our involvement to the size of your deal, so a small retail lease is not billed like an institutional acquisition.',
+      'Kim, Choi & Kim, PC represents investors, owner-operators, small businesses, and developers in New Jersey and the greater Washington DC area. We combine boutique-firm responsiveness with transaction experience across purchases, sales, leasing, and development, and we scale our involvement to the size of your deal, so a small retail lease is not billed like an institutional acquisition.',
     ],
     sections: [
       {
