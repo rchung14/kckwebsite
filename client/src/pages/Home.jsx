@@ -13,7 +13,8 @@ export default function Home() {
   const str = t(locale);
   const h = str.home;
   const services = getServices(locale);
-  const testimonials = getTestimonials(locale);
+  const allTestimonials = getTestimonials(locale);
+  const testimonials = allTestimonials.filter((tm) => !tm.placeholder);
   const [leadAttorney] = getAttorneys(locale);
   const p = (path) => localePath(locale, path);
 
@@ -167,31 +168,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ Testimonials ═══ */}
-      <section id="testimonials" className="testimonials">
-        <div className="container">
-          <div className="testimonials-header">
-            <Eyebrow centered>{h.reviewsEyebrow}</Eyebrow>
-            <h2 className="section-title">{h.reviewsTitle}</h2>
-          </div>
+      {/* Testimonials: hidden until real reviews replace the placeholders */}
+      {testimonials.length > 0 && (
+        <section id="testimonials" className="testimonials">
+          <div className="container">
+            <div className="testimonials-header">
+              <Eyebrow centered>{h.reviewsEyebrow}</Eyebrow>
+              <h2 className="section-title">{h.reviewsTitle}</h2>
+            </div>
 
-          <div className="testimonials-grid">
-            {testimonials.map((tm) => (
-              <div className="review-card" key={tm.name}>
-                {tm.placeholder && <div className="review-badge">{str.reviews.sampleBadge}</div>}
-                <div className="review-stars" aria-label={str.reviews.stars}>
-                  ★★★★★
+            <div className="testimonials-grid">
+              {testimonials.map((tm) => (
+                <div className="review-card" key={tm.name}>
+                  <div className="review-stars" aria-label={str.reviews.stars}>
+                    ★★★★★
+                  </div>
+                  <p className="review-quote">"{tm.quote}"</p>
+                  <div className="review-footer">
+                    <div className="review-name">{tm.name}</div>
+                    <div className="review-meta">{tm.meta}</div>
+                  </div>
                 </div>
-                <p className="review-quote">“{tm.quote}”</p>
-                <div className="review-footer">
-                  <div className="review-name">{tm.name}</div>
-                  <div className="review-meta">{tm.meta}</div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ═══ Contact ═══ */}
       <section id="contact" className="contact">
