@@ -67,7 +67,7 @@ export default function Home() {
             />
             <img
               className="hero-photo"
-              src="/images/attorney-portrait-hero.webp"
+              src="/images/attorney-portrait-hero-800.webp"
               width="1040"
               height="1300"
               alt={h.heroAlt}

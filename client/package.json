@@ -11,7 +11,9 @@
     "prerender": "node scripts/prerender.mjs",
     "fonts": "node scripts/fetch-fonts.mjs",
     "fonts:kr": "node scripts/fetch-fonts-kr.mjs",
+    "fonts:fallbacks": "node scripts/compute-font-fallbacks.mjs",
     "assets": "node scripts/generate-assets.mjs",
+    "hero-sizes": "node scripts/generate-hero-sizes.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -22,6 +24,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.6.0",
+    "fontkit": "^2.0.4",
     "sharp": "^0.34.2",
     "vite": "^7.0.0"
   }

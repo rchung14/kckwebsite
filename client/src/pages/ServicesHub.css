@@ -1,0 +1,60 @@
+/* ═══════════════════ Services hub ═══════════════════ */
+.services-hub .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hub-card {
+  background: var(--color-surface);
+  border-top: 3px solid var(--color-gold);
+  padding: 52px 48px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+}
+.hub-card-head h2 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-dark);
+}
+.hub-card-head h2 a:hover {
+  color: var(--color-gold);
+}
+.hub-card-body p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--color-body);
+  margin-bottom: 18px;
+}
+.hub-card-body ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.hub-card-body li {
+  font-size: 13.5px;
+  color: var(--color-body);
+  display: flex;
+  gap: 8px;
+}
+.hub-card-body li span {
+  color: var(--color-gold-ink);
+}
+.hub-card-featured .hub-card-body li span {
+  color: var(--color-gold);
+}
+.hub-card-featured {
+  background: var(--color-dark);
+}
+.hub-card-featured .hub-card-head h2,
+.hub-card-featured .hub-card-head h2 a {
+  color: var(--color-light);
+}
+.hub-card-featured .hub-card-body p,
+.hub-card-featured .hub-card-body li {
+  color: var(--color-light-dim);
+}

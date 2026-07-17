@@ -1,0 +1,29 @@
+/* ═══════════════════ Legal pages ═══════════════════ */
+.legal-page {
+  padding: 80px;
+  background: var(--color-bg);
+}
+.legal-updated {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted-ink);
+  margin-bottom: 40px;
+}
+.legal-page h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin: 36px 0 12px;
+}
+.legal-page p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-body);
+  margin-bottom: 14px;
+}
+.not-found {
+  min-height: 50vh;
+}

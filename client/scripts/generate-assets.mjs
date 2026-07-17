@@ -1,8 +1,9 @@
-// Generates placeholder attorney images (AVIF + WebP) with the site's
-// geometric brand motif. Replace these files with real photos using the
-// same filenames — no code changes needed:
-//   public/images/attorney-portrait-hero.avif / .webp   (1040×1300)
+// Generates the placeholder attorney headshot (AVIF + WebP) with the site's
+// geometric brand motif. Replace with a real photo using the same filenames
+// — no code changes needed:
 //   public/images/attorney-headshot-about.avif / .webp  ( 900×1200)
+// The hero placeholder is generated separately by generate-hero-sizes.mjs,
+// which renders the responsive 800/1400/2000w srcset variants directly.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -43,5 +44,4 @@ async function generate(name, w, h) {
   }
 }
 
-await generate('attorney-portrait-hero', 1040, 1300);
 await generate('attorney-headshot-about', 900, 1200);

@@ -1,0 +1,44 @@
+/* ═══════════════════ Service article ═══════════════════ */
+.service-article {
+  padding: 80px;
+  background: var(--color-bg);
+}
+.service-section {
+  margin-bottom: 56px;
+}
+.service-section h2 {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-dark);
+  margin-bottom: 20px;
+  padding-top: 20px;
+  border-top: 3px solid var(--color-gold);
+}
+.service-section p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-body);
+  margin-bottom: 16px;
+}
+.dash-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 8px 0 16px;
+}
+.dash-list li {
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-body);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.dash-list li span {
+  color: var(--color-gold-ink);
+  flex-shrink: 0;
+}

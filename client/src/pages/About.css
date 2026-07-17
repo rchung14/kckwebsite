@@ -1,0 +1,38 @@
+.why-us {
+  padding: 96px 80px;
+  background: var(--color-bg);
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+.why-card {
+  background: var(--color-surface);
+  border-top: 3px solid var(--color-gold);
+  padding: 32px 28px;
+}
+.why-card h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+}
+.why-card p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-body);
+}
+.community-note {
+  margin-top: 48px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-body);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}

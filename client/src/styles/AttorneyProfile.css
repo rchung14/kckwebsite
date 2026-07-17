@@ -1,0 +1,104 @@
+/* ═══════════════════ About ═══════════════════ */
+.about {
+  padding: 96px 80px;
+  background: var(--color-surface-warm);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.portrait-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--color-dark);
+  position: relative;
+  overflow: hidden;
+}
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nameplate {
+  background: var(--color-gold);
+  padding: 16px 20px;
+}
+.nameplate-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+.nameplate-title {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  margin-top: 3px;
+}
+
+.about-bio {
+  padding-top: 8px;
+}
+.about-bio .eyebrow {
+  margin-bottom: 20px;
+}
+.about-title {
+  font-size: 42px;
+  margin-bottom: 28px;
+  text-wrap: pretty;
+}
+.about-bio p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-body);
+  margin-bottom: 20px;
+}
+.about-bio p:last-of-type {
+  margin-bottom: 44px;
+}
+
+.credentials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--color-border);
+}
+.credential-cell {
+  padding: 20px 24px;
+}
+.credential-cell:nth-child(odd) {
+  border-right: 1px solid var(--color-border);
+}
+.credential-cell:nth-child(-n + 2) {
+  border-bottom: 1px solid var(--color-border);
+}
+.credential-label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-ink);
+  margin-bottom: 6px;
+}
+.credential-value {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-dark);
+}
+
+.attorneys-more {
+  padding: 72px 80px;
+  background: var(--color-bg);
+}
+.attorney-brief h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.attorney-brief p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-body);
+}

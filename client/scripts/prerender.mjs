@@ -13,6 +13,14 @@ const { render, routesMeta, SITE_URL } = await import(
   path.resolve('dist-ssr/entry-server.js')
 );
 
+// The webfont @font-face bulk (fonts.css + fonts-kr.css) is built as its own
+// CSS-only entry (src/fonts-entry.js) so it never merges into the main,
+// render-blocking stylesheet. Resolve its hashed filename from the build
+// manifest rather than hardcoding it, since the hash changes every build.
+const manifest = JSON.parse(fs.readFileSync(path.join(dist, '.vite/manifest.json'), 'utf8'));
+const fontsCssFile = manifest['src/fonts-entry.js'].css[0];
+const fontsCssTag = `<link rel="preload" href="/${fontsCssFile}" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link rel="stylesheet" href="/${fontsCssFile}" /></noscript>`;
+
 const esc = (s) =>
   s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 
@@ -25,6 +33,7 @@ function headFor(meta, { noindex = false } = {}) {
     `<title>${esc(meta.title)}</title>`,
     `<meta name="description" content="${esc(meta.description)}" />`,
     `<link rel="canonical" href="${canonical}" />`,
+    fontsCssTag,
   ];
   if (meta.alternates) {
     tags.push(
@@ -35,7 +44,7 @@ function headFor(meta, { noindex = false } = {}) {
   }
   if (meta.path === '/' || meta.path === '/en') {
     tags.push(
-      `<link rel="preload" as="image" type="image/avif" imagesizes="(max-width: 768px) 100vw, 50vw" imagesrcset="/images/attorney-portrait-hero-800.avif 800w, /images/attorney-portrait-hero-1400.avif 1400w, /images/attorney-portrait-hero-2000.avif 2000w" />`
+      `<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesizes="(max-width: 768px) 100vw, 50vw" imagesrcset="/images/attorney-portrait-hero-800.avif 800w, /images/attorney-portrait-hero-1400.avif 1400w, /images/attorney-portrait-hero-2000.avif 2000w" />`
     );
   }
   if (noindex) tags.push('<meta name="robots" content="noindex" />');

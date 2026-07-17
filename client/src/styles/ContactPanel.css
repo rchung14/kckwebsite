@@ -1,0 +1,59 @@
+/* ═══════════════════ Contact ═══════════════════ */
+.contact {
+  padding: 96px 80px;
+  background: var(--color-dark);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-info .eyebrow {
+  margin-bottom: 20px;
+}
+.contact-title {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--color-light);
+  margin-bottom: 28px;
+}
+.contact-title em {
+  color: var(--color-gold);
+}
+.contact-body {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-light-dim);
+  margin-bottom: 48px;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.contact-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 6px;
+}
+.contact-phone {
+  font-family: var(--font-display);
+  font-size: 26px;
+}
+.contact-phone a {
+  color: var(--color-light);
+}
+.contact-value {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-light-dim);
+}
+.contact-value a {
+  color: var(--color-light-dim);
+}
