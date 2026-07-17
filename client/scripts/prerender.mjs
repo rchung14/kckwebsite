@@ -19,7 +19,11 @@ const { render, routesMeta, SITE_URL } = await import(
 // manifest rather than hardcoding it, since the hash changes every build.
 const manifest = JSON.parse(fs.readFileSync(path.join(dist, '.vite/manifest.json'), 'utf8'));
 const fontsCssFile = manifest['src/fonts-entry.js'].css[0];
-const fontsCssTag = `<link rel="preload" href="/${fontsCssFile}" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link rel="stylesheet" href="/${fontsCssFile}" /></noscript>`;
+// No inline onload handler here: the deployed CSP is `script-src 'self'`,
+// which blocks inline event handler attributes. The stylesheet swap-in
+// happens in src/main.jsx instead (an external script, so it satisfies
+// 'self'). This tag is just a fetch hint; noscript covers JS-disabled UAs.
+const fontsCssTag = `<link rel="preload" href="/${fontsCssFile}" as="style" /><noscript><link rel="stylesheet" href="/${fontsCssFile}" /></noscript>`;
 
 const esc = (s) =>
   s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
@@ -44,7 +48,7 @@ function headFor(meta, { noindex = false } = {}) {
   }
   if (meta.path === '/' || meta.path === '/en') {
     tags.push(
-      `<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesizes="(max-width: 768px) 100vw, 50vw" imagesrcset="/images/attorney-portrait-hero-800.avif 800w, /images/attorney-portrait-hero-1400.avif 1400w, /images/attorney-portrait-hero-2000.avif 2000w" />`
+      `<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesizes="(max-width: 768px) 100vw, 50vw" imagesrcset="/images/attorney-portrait-hero-800.avif 800w, /images/attorney-portrait-hero-1200.avif 1200w, /images/attorney-portrait-hero-1400.avif 1400w, /images/attorney-portrait-hero-2000.avif 2000w" />`
     );
   }
   if (noindex) tags.push('<meta name="robots" content="noindex" />');
@@ -67,8 +71,8 @@ function headFor(meta, { noindex = false } = {}) {
   return tags.join('\n    ');
 }
 
-function renderPage(routePath, meta, opts) {
-  const { html: appHtml } = render(routePath);
+async function renderPage(routePath, meta, opts) {
+  const { html: appHtml } = await render(routePath);
   return template
     .replace('<html lang="ko">', `<html lang="${meta.lang}">`)
     .split('<!--app-head-->')
@@ -88,7 +92,7 @@ function writePage(routePath, html) {
 }
 
 for (const meta of routesMeta) {
-  writePage(meta.path, renderPage(meta.path, meta));
+  writePage(meta.path, await renderPage(meta.path, meta));
 }
 
 // 404 page (served by Vercel for unknown paths) — Korean, matching the
@@ -102,7 +106,7 @@ for (const meta of routesMeta) {
   };
   fs.writeFileSync(
     path.join(dist, '404.html'),
-    renderPage('/this-page-does-not-exist', meta, { noindex: true })
+    await renderPage('/this-page-does-not-exist', meta, { noindex: true })
   );
   console.log('✓ prerendered /404');
 }

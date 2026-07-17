@@ -58,12 +58,12 @@ export default function Home() {
             <source
               type="image/avif"
               sizes="(max-width: 768px) 100vw, 50vw"
-              srcSet="/images/attorney-portrait-hero-800.avif 800w, /images/attorney-portrait-hero-1400.avif 1400w, /images/attorney-portrait-hero-2000.avif 2000w"
+              srcSet="/images/attorney-portrait-hero-800.avif 800w, /images/attorney-portrait-hero-1200.avif 1200w, /images/attorney-portrait-hero-1400.avif 1400w, /images/attorney-portrait-hero-2000.avif 2000w"
             />
             <source
               type="image/webp"
               sizes="(max-width: 768px) 100vw, 50vw"
-              srcSet="/images/attorney-portrait-hero-800.webp 800w, /images/attorney-portrait-hero-1400.webp 1400w, /images/attorney-portrait-hero-2000.webp 2000w"
+              srcSet="/images/attorney-portrait-hero-800.webp 800w, /images/attorney-portrait-hero-1200.webp 1200w, /images/attorney-portrait-hero-1400.webp 1400w, /images/attorney-portrait-hero-2000.webp 2000w"
             />
             <img
               className="hero-photo"

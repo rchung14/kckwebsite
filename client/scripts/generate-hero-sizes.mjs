@@ -16,7 +16,7 @@ if (!fs.existsSync(sourcePath)) {
   throw new Error(`Missing source photo: ${path.relative(process.cwd(), sourcePath)}`);
 }
 
-const widths = [800, 1400, 2000];
+const widths = [800, 1200, 1400, 2000];
 
 for (const w of widths) {
   const avifFile = path.join(outDir, `attorney-portrait-hero-${w}.avif`);
