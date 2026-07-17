@@ -55,7 +55,16 @@ export default function Home() {
 
         <div className="hero-visual">
           <picture>
-            <source srcSet="/images/attorney-portrait-hero.avif" type="image/avif" />
+            <source
+              type="image/avif"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              srcSet="/images/attorney-portrait-hero-800.avif 800w, /images/attorney-portrait-hero-1400.avif 1400w, /images/attorney-portrait-hero-2000.avif 2000w"
+            />
+            <source
+              type="image/webp"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              srcSet="/images/attorney-portrait-hero-800.webp 800w, /images/attorney-portrait-hero-1400.webp 1400w, /images/attorney-portrait-hero-2000.webp 2000w"
+            />
             <img
               className="hero-photo"
               src="/images/attorney-portrait-hero.webp"

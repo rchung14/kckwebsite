@@ -8,8 +8,10 @@
   --color-dark-field: #23233B;
   --color-dark-border: #34344F;
   --color-gold: #C9A84C;
+  --color-gold-ink: #7D6626;
   --color-body: #404060;
-  --color-muted: #808090;
+  --color-muted: #858594;
+  --color-muted-ink: #696978;
   --color-border: #E0DAD0;
   --color-light: #F9F7F3;
   --color-light-dim: #A8A8BC;
@@ -132,6 +134,10 @@ ul {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: var(--color-gold-ink);
+}
+.contact-info .eyebrow-text,
+.cta-band .eyebrow-text {
   color: var(--color-gold);
 }
 
@@ -193,13 +199,18 @@ ul {
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-gold);
-  border-bottom: 1px solid var(--color-gold);
+  color: var(--color-gold-ink);
+  border-bottom: 1px solid var(--color-gold-ink);
   padding-bottom: 2px;
 }
-.text-link {
+.service-card-featured .link-gold,
+.hub-card-featured .link-gold {
   color: var(--color-gold);
-  border-bottom: 1px solid var(--color-gold);
+  border-bottom-color: var(--color-gold);
+}
+.text-link {
+  color: var(--color-gold-ink);
+  border-bottom: 1px solid var(--color-gold-ink);
 }
 
 /* ═══════════════════ Nav ═══════════════════ */
@@ -234,7 +245,7 @@ ul {
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-muted-ink);
   margin-top: 2px;
 }
 .nav-links {
@@ -319,7 +330,7 @@ ul {
 }
 .hero-title em {
   font-style: italic;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
 }
 .hero-body {
   font-size: 16px;
@@ -344,7 +355,7 @@ ul {
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-muted-ink);
 }
 .hero-phone-number {
   font-family: var(--font-display);
@@ -377,7 +388,7 @@ ul {
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-muted-ink);
   margin-top: 2px;
 }
 .trust-divider {
@@ -431,8 +442,11 @@ ul {
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-muted-ink);
   margin-bottom: 20px;
+}
+.hub-card-featured .service-number {
+  color: var(--color-muted);
 }
 .service-card h3 {
   font-family: var(--font-display);
@@ -466,6 +480,9 @@ ul {
   align-items: flex-start;
 }
 .service-card li span {
+  color: var(--color-gold-ink);
+}
+.service-card-featured li span {
   color: var(--color-gold);
 }
 .service-card-link {
@@ -525,7 +542,7 @@ ul {
   font-size: 11.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-muted-ink);
 }
 .breadcrumbs li + li::before {
   content: '/';
@@ -536,7 +553,7 @@ ul {
   color: var(--color-gold);
 }
 .breadcrumbs [aria-current] {
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
 }
 
 /* ═══════════════════ Services hub ═══════════════════ */
@@ -583,6 +600,9 @@ ul {
   gap: 8px;
 }
 .hub-card-body li span {
+  color: var(--color-gold-ink);
+}
+.hub-card-featured .hub-card-body li span {
   color: var(--color-gold);
 }
 .hub-card-featured {
@@ -638,7 +658,7 @@ ul {
   align-items: flex-start;
 }
 .dash-list li span {
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   flex-shrink: 0;
 }
 
@@ -673,7 +693,7 @@ ul {
   transform: translateY(-50%);
   font-family: var(--font-display);
   font-size: 22px;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
 }
 .faq-item[open] summary::after {
   content: '–';
@@ -717,14 +737,13 @@ ul {
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 500;
-  color: var(--color-light);
+  color: var(--color-dark);
 }
 .nameplate-title {
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-dark);
-  opacity: 0.7;
   margin-top: 3px;
 }
 
@@ -768,7 +787,7 @@ ul {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-ink);
   margin-bottom: 6px;
 }
 .credential-value {
@@ -860,8 +879,8 @@ ul {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-muted);
-  border: 1px dashed var(--color-muted);
+  color: var(--color-muted-ink);
+  border: 1px dashed var(--color-muted-ink);
   padding: 4px 8px;
 }
 .review-stars {
@@ -887,7 +906,7 @@ ul {
 }
 .review-meta {
   font-size: 12px;
-  color: var(--color-muted);
+  color: var(--color-muted-ink);
   margin-top: 2px;
 }
 
@@ -1098,7 +1117,7 @@ ul {
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-muted-ink);
   margin-bottom: 40px;
 }
 .legal-page h2 {

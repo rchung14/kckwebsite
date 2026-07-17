@@ -1,9 +1,8 @@
 // Build-time prerendering (SSG).
 // Renders every route (Korean at the root, English under /en) through the
 // SSR bundle and writes static HTML into dist/ with title, meta description,
-// canonical, hreflang alternates, OG tags, and (on the Korean homepage) the
-// GSC verification tag baked in. Also generates sitemap.xml, robots.txt,
-// and 404.html.
+// canonical, hreflang alternates, and OG tags baked in. Also generates
+// sitemap.xml, robots.txt, and 404.html.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -34,8 +33,10 @@ function headFor(meta, { noindex = false } = {}) {
       `<link rel="alternate" hreflang="x-default" href="${abs(meta.alternates.ko)}" />`
     );
   }
-  if (meta.path === '/') {
-    tags.push('<meta name="google-site-verification" content="PASTE_GSC_CODE_HERE" />');
+  if (meta.path === '/' || meta.path === '/en') {
+    tags.push(
+      `<link rel="preload" as="image" type="image/avif" imagesizes="(max-width: 768px) 100vw, 50vw" imagesrcset="/images/attorney-portrait-hero-800.avif 800w, /images/attorney-portrait-hero-1400.avif 1400w, /images/attorney-portrait-hero-2000.avif 2000w" />`
+    );
   }
   if (noindex) tags.push('<meta name="robots" content="noindex" />');
   tags.push(
