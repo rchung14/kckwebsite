@@ -1,5 +1,6 @@
 import JsonLd from './JsonLd.jsx';
 import { faqSchema } from '../seo/schema.js';
+import './FaqList.css';
 
 export default function FaqList({ faqs }) {
   return (

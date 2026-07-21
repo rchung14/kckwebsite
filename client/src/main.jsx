@@ -15,21 +15,18 @@ if (fontsPreload && !document.querySelector(`link[rel="stylesheet"][href="${font
   link.href = fontsPreload.href;
   document.head.appendChild(link);
 }
+// Global styles + everything the Home page needs for first paint. CSS for
+// lazy-loaded routes (About, Contact, Services*, Legal pages, CtaBand,
+// FaqList) is imported by those components instead, so Rollup emits it into
+// their own async chunks rather than shipping it on every page load.
 import './styles/tokens.css';
 import './styles/font-fallbacks.css';
 import './styles/shared.css';
 import './components/Nav.css';
 import './pages/Home.css';
-import './styles/PageHero.css';
-import './pages/ServicesHub.css';
-import './pages/ServicePage.css';
-import './components/FaqList.css';
 import './styles/AttorneyProfile.css';
-import './pages/About.css';
 import './styles/ContactPanel.css';
 import './components/ContactForm.css';
-import './components/CtaBand.css';
-import './styles/Legal.css';
 import './components/Footer.css';
 import './styles/Responsive.css';
 

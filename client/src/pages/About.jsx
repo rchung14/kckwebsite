@@ -6,6 +6,8 @@ import { getAttorneys, getWhyChooseUs, attorneys } from '../data/attorneys.js';
 import { personSchema } from '../seo/schema.js';
 import { useLocale, localePath } from '../i18n/LocaleContext.jsx';
 import { t } from '../i18n/strings.js';
+import '../styles/PageHero.css';
+import './About.css';
 
 const copy = {
   en: {

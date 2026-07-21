@@ -3,6 +3,7 @@ import Eyebrow from './Eyebrow.jsx';
 import { FIRM } from '../seo/site.js';
 import { useLocale, localePath } from '../i18n/LocaleContext.jsx';
 import { t } from '../i18n/strings.js';
+import './CtaBand.css';
 
 export default function CtaBand() {
   const locale = useLocale();

@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { useLocale, localePath } from '../i18n/LocaleContext.jsx';
+import '../styles/Legal.css';
 
 const copy = {
   en: {

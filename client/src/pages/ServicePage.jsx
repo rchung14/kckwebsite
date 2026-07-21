@@ -10,6 +10,8 @@ import { getFaqs } from '../data/faq.js';
 import { serviceSchema } from '../seo/schema.js';
 import { useLocale, localePath } from '../i18n/LocaleContext.jsx';
 import { t } from '../i18n/strings.js';
+import '../styles/PageHero.css';
+import './ServicePage.css';
 
 export default function ServicePage() {
   const { slug } = useParams();

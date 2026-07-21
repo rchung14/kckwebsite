@@ -7,6 +7,20 @@ import { getAttorneys } from '../data/attorneys.js';
 import { FIRM } from '../seo/site.js';
 import { useLocale, localePath } from '../i18n/LocaleContext.jsx';
 import { t } from '../i18n/strings.js';
+import heroAvif800 from '../assets/images/attorney-portrait-hero-800.avif';
+import heroAvif1200 from '../assets/images/attorney-portrait-hero-1200.avif';
+import heroAvif1400 from '../assets/images/attorney-portrait-hero-1400.avif';
+import heroAvif2000 from '../assets/images/attorney-portrait-hero-2000.avif';
+import heroWebp800 from '../assets/images/attorney-portrait-hero-800.webp';
+import heroWebp1200 from '../assets/images/attorney-portrait-hero-1200.webp';
+import heroWebp1400 from '../assets/images/attorney-portrait-hero-1400.webp';
+import heroWebp2000 from '../assets/images/attorney-portrait-hero-2000.webp';
+
+// Content-hashed via Vite's asset pipeline (see vite.config.js manifest),
+// so browser/CDN caching (immutable, 1y) is safe: a new photo gets a new
+// filename automatically instead of silently reusing a stale cached one.
+const heroAvifSrcSet = `${heroAvif800} 800w, ${heroAvif1200} 1200w, ${heroAvif1400} 1400w, ${heroAvif2000} 2000w`;
+const heroWebpSrcSet = `${heroWebp800} 800w, ${heroWebp1200} 1200w, ${heroWebp1400} 1400w, ${heroWebp2000} 2000w`;
 
 export default function Home() {
   const locale = useLocale();
@@ -58,16 +72,16 @@ export default function Home() {
             <source
               type="image/avif"
               sizes="(max-width: 768px) 100vw, 50vw"
-              srcSet="/images/attorney-portrait-hero-800.avif 800w, /images/attorney-portrait-hero-1200.avif 1200w, /images/attorney-portrait-hero-1400.avif 1400w, /images/attorney-portrait-hero-2000.avif 2000w"
+              srcSet={heroAvifSrcSet}
             />
             <source
               type="image/webp"
               sizes="(max-width: 768px) 100vw, 50vw"
-              srcSet="/images/attorney-portrait-hero-800.webp 800w, /images/attorney-portrait-hero-1200.webp 1200w, /images/attorney-portrait-hero-1400.webp 1400w, /images/attorney-portrait-hero-2000.webp 2000w"
+              srcSet={heroWebpSrcSet}
             />
             <img
               className="hero-photo"
-              src="/images/attorney-portrait-hero-800.webp"
+              src={heroWebp800}
               width="1040"
               height="1300"
               alt={h.heroAlt}

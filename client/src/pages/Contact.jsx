@@ -4,6 +4,7 @@ import ContactForm from '../components/ContactForm.jsx';
 import { FIRM } from '../seo/site.js';
 import { useLocale, localePath } from '../i18n/LocaleContext.jsx';
 import { t } from '../i18n/strings.js';
+import '../styles/PageHero.css';
 
 const copy = {
   en: {

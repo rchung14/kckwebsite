@@ -1,15 +1,16 @@
-// Generates the responsive hero srcset (800/1400/2000w, AVIF + WebP) from the
-// real source photo in assets-src/. The source file itself is not shipped —
-// only these resized/re-encoded variants land in public/images/, which is
-// what Vite copies into dist/. Re-run with `npm run hero-sizes` if the
-// source photo changes.
+// Generates the responsive hero srcset (800/1200/1400/2000w, AVIF + WebP)
+// from the real source photo in assets-src/. The source file itself is not
+// shipped — only these resized/re-encoded variants land in
+// src/assets/images/, where Vite's asset pipeline content-hashes them for
+// long-lived caching (see Home.jsx / prerender.mjs). Re-run with
+// `npm run hero-sizes` if the source photo changes.
 
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 
 const sourcePath = path.resolve('assets-src/attorney-portrait-hero-source.jpg');
-const outDir = path.resolve('public/images');
+const outDir = path.resolve('src/assets/images');
 fs.mkdirSync(outDir, { recursive: true });
 
 if (!fs.existsSync(sourcePath)) {

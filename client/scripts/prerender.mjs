@@ -25,6 +25,13 @@ const fontsCssFile = manifest['src/fonts-entry.js'].css[0];
 // 'self'). This tag is just a fetch hint; noscript covers JS-disabled UAs.
 const fontsCssTag = `<link rel="preload" href="/${fontsCssFile}" as="style" /><noscript><link rel="stylesheet" href="/${fontsCssFile}" /></noscript>`;
 
+// Hashed hero image filenames (see src/assets/images), resolved from the
+// manifest so the preload tag always points at the current build's files.
+const heroWidths = [800, 1200, 1400, 2000];
+const heroAvifSrcSet = heroWidths
+  .map((w) => `/${manifest[`src/assets/images/attorney-portrait-hero-${w}.avif`].file} ${w}w`)
+  .join(', ');
+
 const esc = (s) =>
   s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 
@@ -48,7 +55,7 @@ function headFor(meta, { noindex = false } = {}) {
   }
   if (meta.path === '/' || meta.path === '/en') {
     tags.push(
-      `<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesizes="(max-width: 768px) 100vw, 50vw" imagesrcset="/images/attorney-portrait-hero-800.avif 800w, /images/attorney-portrait-hero-1200.avif 1200w, /images/attorney-portrait-hero-1400.avif 1400w, /images/attorney-portrait-hero-2000.avif 2000w" />`
+      `<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesizes="(max-width: 768px) 100vw, 50vw" imagesrcset="${heroAvifSrcSet}" />`
     );
   }
   if (noindex) tags.push('<meta name="robots" content="noindex" />');
